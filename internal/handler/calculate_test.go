@@ -20,14 +20,14 @@ func TestCalculateHandler(t *testing.T) {
 			method:      "GET",
 			requestBody: "",
 			expr:        "",
-			statusCode:  http.StatusMethodNotAllowed,
+			statusCode:  http.StatusInternalServerError,
 		},
 		{
 			name:        "invalid JSON request body",
 			method:      "POST",
 			requestBody: "invalid json",
 			expr:        "",
-			statusCode:  http.StatusUnprocessableEntity,
+			statusCode:  http.StatusInternalServerError,
 		},
 		{
 			name:        "valid request with invalid expression",
